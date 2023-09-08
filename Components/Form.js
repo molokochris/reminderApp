@@ -21,19 +21,21 @@ export default function Form({ navigation }) {
       <StatusBar backgroundColor={"whitesmoke"} barStyle={"dark-content"} />
       <ScrollView>
         <View style={styles.container}>
-          <View style={styles.head}>
-            <Text style={styles.headText}>OccaLink</Text>
-          </View>
-          <View style={styles.body}>
-            <Image source={image} style={styles.image} />
+          <View style={styles.body} flex={1}>
             <View style={styles.input}>
               <Text>Enter Name(s):</Text>
-              <TextInput style={styles.inputText} />
+              <TextInput 
+                placeholder="Enter Names"
+                style={styles.inputText} />
               <Text>Enter Surname:</Text>
-              <TextInput style={styles.inputText} />
+              <TextInput
+                placeholder="Surname"
+                style={styles.inputText} />
+              <TextInput
+                placeholder="Description"
+                style={styles.inputDescription} />
             </View>
             <View style={styles.ages}>
-              {/* <Text style={styles.label}>DD</Text> */}
               <TextInput
                 placeholder="DD"
                 numberOfLines={1}
@@ -42,7 +44,6 @@ export default function Form({ navigation }) {
                 style={styles.ageInput}
               />
               <Text style={styles.label}>/</Text>
-              {/* <Text style={styles.label}>MM</Text> */}
               <TextInput
                 placeholder="MM"
                 numberOfLines={1}
@@ -51,7 +52,6 @@ export default function Form({ navigation }) {
                 style={styles.ageInput}
               />
               <Text style={styles.label}>/</Text>
-              {/* <Text style={styles.label}>YYYY</Text> */}
               <TextInput
                 placeholder="YYYY"
                 numberOfLines={1}
@@ -67,9 +67,6 @@ export default function Form({ navigation }) {
               <Text style={styles.buttonText}>Save</Text>
             </Pressable>
           </View>
-          {/* <View style={styles.head}>
-            <Text>&copy;</Text>
-          </View> */}
         </View>
       </ScrollView>
     </View>

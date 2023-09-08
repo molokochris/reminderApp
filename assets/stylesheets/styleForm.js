@@ -3,8 +3,8 @@ const styleForm = {
       // height: "90vh",
       backgroundColor: "white",
       paddingTop: "10%",
-      paddingBottom: "17%",
-      // height: 600,
+      paddingBottom: "10%",
+      // flex: 1,
     },
     head: {
       padding: "1%",
@@ -16,6 +16,13 @@ const styleForm = {
       fontWeight: "bold",
       fontSize: 18,
       // position: "sticky",
+    },
+    inputDescription: {
+      // height: "40%",
+      paddingVertical: "2%",
+      paddingHorizontal: "2%",
+      borderWidth: 1,
+      borderRadius: 6,
     },
     body: {
       flex: 1,
@@ -70,8 +77,8 @@ const styleForm = {
       backgroundColor: "black",
       paddingHorizontal: "8%",
       paddingVertical: "4%",
-      marginTop: "5%",
-      marginBottom: "5%",
+      marginTop: "1%",
+      marginBottom: "1%",
       borderRadius: 8,
     },
     buttonText: {
