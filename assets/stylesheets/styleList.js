@@ -7,7 +7,18 @@ const styleList = StyleSheet.create({
     paddingTop: "10%",
     // paddingHorizontal: '2%',
     backgroundColor: "#66BB6A",
+    // justifyContent: "center",
   },
+  modalContainer: {
+    // justifyContent:"center",
+    // alignItems:"center",
+  },
+  modal: {
+    // width: "99%",
+    height: "80%",
+    alignItems: "center",
+    justifyContent: "center",
+},
   addBtn: {
     alignItems: "flex-end",
     paddingHorizontal: "2%",

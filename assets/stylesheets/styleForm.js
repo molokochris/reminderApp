@@ -1,10 +1,8 @@
 const styleForm = {
     container: {
-      // height: "90vh",
       backgroundColor: "white",
       paddingTop: "10%",
       paddingBottom: "10%",
-      // flex: 1,
     },
     head: {
       padding: "1%",
@@ -15,10 +13,8 @@ const styleForm = {
     headText: {
       fontWeight: "bold",
       fontSize: 18,
-      // position: "sticky",
     },
     inputDescription: {
-      // height: "40%",
       paddingVertical: "2%",
       paddingHorizontal: "2%",
       borderWidth: 1,
@@ -28,9 +24,6 @@ const styleForm = {
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
-      // backgroundColor: "blue",
-      // padding: 10,
-      // height: 700,
     },
     image: {
       width: 300,
@@ -42,7 +35,7 @@ const styleForm = {
     inputText: {
       padding: "2%",
       borderWidth: 1,
-      width: 280,
+      width: 250,
       marginBottom: "2%",
       marginTop: "1%",
       borderRadius: 6,

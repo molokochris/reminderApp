@@ -36,12 +36,13 @@ export default function List() {
   return (
     <PaperProvider>
       <View style={styles.container}>
-        <StatusBar backgroundColor={"#66BB6A"} barStyle={"default"} />
-        <Portal>
+        <StatusBar backgroundColor={"#66BB6A"} style="light" />
+        <Portal style={styles.modalContainer}>
           <Modal
             visible={visible}
             onDismiss={() => setVisible(false)}
             contentContainerStyle={containerStyle}
+            style={styles.modal}
           >
             <Form />
           </Modal>

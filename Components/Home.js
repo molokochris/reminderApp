@@ -15,13 +15,15 @@ const image = require("../assets/images/header-img.png");
 export default function Home({ navigation }) {
   const [fontsLoaded] = useFonts({
     // "Jua": require("../assets/fonts/Jua-Regular.ttf"),
-    "Kolker": require("../assets/fonts/KolkerBrush-Regular.ttf"),
+    Kolker: require("../assets/fonts/KolkerBrush-Regular.ttf"),
   });
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"whitesmoke"} barStyle={"dark-content"} />
       <View style={styles.head}>
-        <Text style={styles.headTexts}>Occa<Text style={styles.textHalf}>Link</Text></Text>
+        <Text style={styles.headTexts}>
+          Occa<Text style={styles.textHalf}>Link</Text>
+        </Text>
       </View>
       <Image source={image} style={styles.image} />
       {/* <Text>Home</Text> */}

@@ -15,12 +15,17 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Form from "./Components/Form";
 import List from "./Components/List";
+import { useFonts } from "expo-font";
 import styleForm from "./assets/stylesheets/styleForm";
 import Home from "./Components/Home";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
 
+  const [fontsLoaded] = useFonts({
+    "Jua": require("./assets/fonts/Jua-Regular.ttf"),
+    "Kolker": require("./assets/fonts/KolkerBrush-Regular.ttf"),
+  });
   const [selected, setSelected] = useState("");
   const image = require("./assets/images/header-img.png");
   return (
