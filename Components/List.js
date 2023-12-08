@@ -27,6 +27,7 @@ export default function List() {
     // Kolker: require("../assets/fonts/KolkerBrush-Regular.ttf"),
   });
   const [visible, setVisible] = useState(false);
+
   // const nnow = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
   // const nnow = dateFormat("HH:MM");
   const containerStyle = { backgroundColor: "white", padding: 20 };
@@ -77,7 +78,7 @@ export default function List() {
                   <Text style={styles.textFont}>Birthday</Text>
                 </View>
                 <View style={styles.ring}>
-                  <Image source={bellOn} style={{ width: 35, height: 35 }} />
+                  <Image source={bellOn} style={{ width: 25, height: 25 }} />
                 </View>
               </View>
               <View style={styles.tab}>
@@ -89,7 +90,7 @@ export default function List() {
                   <Text style={styles.textFont}>Birthday</Text>
                 </View>
                 <View style={styles.ring}>
-                  <Image source={bellAdd} style={{ width: 35, height: 35 }} />
+                  <Image source={bellAdd} style={{ width: 25, height: 25 }} />
                 </View>
               </View>
               <View style={styles.tab}>
@@ -101,7 +102,7 @@ export default function List() {
                   <Text style={styles.textFont}>Birthday</Text>
                 </View>
                 <View style={styles.ring}>
-                  <Image source={bellMute} style={{ width: 35, height: 35 }} />
+                  <Image source={bellMute} style={{ width: 25, height: 25 }} />
                 </View>
               </View>
               <View style={styles.tab}>
@@ -113,7 +114,7 @@ export default function List() {
                   <Text style={styles.textFont}>Birthday</Text>
                 </View>
                 <View style={styles.ring}>
-                  <Image source={bellMute} style={{ width: 35, height: 35 }} />
+                  <Image source={bellMute} style={{ width: 25, height: 25 }} />
                 </View>
               </View>
               <View style={styles.tab}>
@@ -125,7 +126,7 @@ export default function List() {
                   <Text style={styles.textFont}>Birthday</Text>
                 </View>
                 <View style={styles.ring}>
-                  <Image source={bellMute} style={{ width: 35, height: 35 }} />
+                  <Image source={bellMute} style={{ width: 25, height: 25 }} />
                 </View>
               </View>
             </View>
