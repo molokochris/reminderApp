@@ -15,10 +15,10 @@ const styleList = StyleSheet.create({
   },
   modal: {
     // width: "99%",
-    height: "80%",
+    // height: "80%",
     alignItems: "center",
     justifyContent: "center",
-},
+  },
   addBtn: {
     alignItems: "flex-end",
     paddingHorizontal: "2%",

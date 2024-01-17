@@ -8,7 +8,7 @@ const style = StyleSheet.create({
     alignItems: "center",
   },
   head: {
-    paddingVertical: "4%",
+    // paddingVertical: "4%",
     // flex: 1,
     justifyContent: "center",
     alignItems: "center",

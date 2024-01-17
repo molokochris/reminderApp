@@ -4,8 +4,10 @@ import {
   Pressable,
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
   Text,
   View,
+  Alert,
 } from "react-native";
 import styleList from "../assets/stylesheets/styleList";
 import { StatusBar } from "expo-status-bar";
@@ -16,23 +18,42 @@ import bellMute from "../assets/images/mute-notif.png";
 import balloon from "../assets/images/balloon.png";
 import add from "../assets/images/add-btn.png";
 import { useFonts } from "expo-font";
-// import {Icon} from "react-native-vector-icons";
 import { Modal, Portal, Button, PaperProvider } from "react-native-paper";
 import dateFormat, { masks } from "dateformat";
 import Form from "./Form";
 
 export default function List() {
+  const [alerts, setAlerts] = useState([]);
+  const [newAlert, setNewAlert] = useState(null);
+  const [visible, setVisible] = useState(false);
+
   const [fontsLoaded] = useFonts({
     Jua: require("../assets/fonts/Jua-Regular.ttf"),
-    // Kolker: require("../assets/fonts/KolkerBrush-Regular.ttf"),
+    Kolker: require("../assets/fonts/KolkerBrush-Regular.ttf"),
   });
-  const [visible, setVisible] = useState(false);
   // const nnow = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
   // const nnow = dateFormat("HH:MM");
-  const containerStyle = { backgroundColor: "white", padding: 20 };
+  const containerStyle = { backgroundColor: "white" };
   const month = dateFormat("mmm");
   const day = dateFormat("dd");
 
+  useEffect(() => {
+    if (alerts != []) {
+      alerts.filter((item) => {
+        if (item.day == dateFormat("dd") && item.month == dateFormat("mm")) {
+          Alert.alert(`hurray!!!, its ${item.name}'s birthday.`);
+        }
+      });
+    }
+  }, [alerts]);
+  console.log(alerts);
+
+  function handleDelete(id) {
+    const newAlerts = alerts.filter((item) => {
+      return item.id != id;
+    });
+    setAlerts(newAlerts);
+  }
   return (
     <PaperProvider>
       <View style={styles.container}>
@@ -44,7 +65,12 @@ export default function List() {
             contentContainerStyle={containerStyle}
             style={styles.modal}
           >
-            <Form />
+            <Form
+              setVisible={setVisible}
+              setNewAlert={setNewAlert}
+              alerts={alerts}
+              setAlerts={setAlerts}
+            />
           </Modal>
         </Portal>
         <Pressable style={styles.addBtn} onPress={() => setVisible(true)}>
@@ -62,25 +88,41 @@ export default function List() {
                 <Image source={balloon} style={{ width: 30, height: 30 }} />
               </View>
               <View style={styles.numNotif}>
-                <Text style={styles.numUpdates}>5</Text>
+                <Text style={styles.numUpdates}>{alerts.length}</Text>
               </View>
             </View>
           </View>
           <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.alerts}>
-              <View style={styles.tab}>
-                <View style={styles.day}>
-                  <Text style={styles.textFont}>Today</Text>
-                </View>
-                <View style={styles.fsNames}>
-                  <Text style={styles.textFont}>Name & Surname's</Text>
-                  <Text style={styles.textFont}>Birthday</Text>
-                </View>
-                <View style={styles.ring}>
-                  <Image source={bellOn} style={{ width: 35, height: 35 }} />
-                </View>
-              </View>
-              <View style={styles.tab}>
+              {alerts ? (
+                alerts.map((item, id) => {
+                  return (
+                    <View style={styles.tab} key={id}>
+                      <View style={styles.day}>
+                        <Text style={styles.textFont}>Today</Text>
+                      </View>
+                      <View style={styles.fsNames}>
+                        <Text
+                          style={styles.textFont}
+                        >{`${item.name} ${item.surname}'s`}</Text>
+                        <Text style={styles.textFont}>Birthday</Text>
+                      </View>
+                      <TouchableOpacity
+                        style={styles.ring}
+                        onPress={() => handleDelete(item.id)}
+                      >
+                        <Image
+                          source={bellOn}
+                          style={{ width: 30, height: 30 }}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  );
+                })
+              ) : (
+                <Text>no alerts</Text>
+              )}
+              {/* <View style={styles.tab}>
                 <View style={styles.day}>
                   <Text style={styles.textFont}>Today</Text>
                 </View>
@@ -127,7 +169,7 @@ export default function List() {
                 <View style={styles.ring}>
                   <Image source={bellMute} style={{ width: 35, height: 35 }} />
                 </View>
-              </View>
+              </View> */}
             </View>
           </ScrollView>
           <View></View>
