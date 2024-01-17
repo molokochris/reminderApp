@@ -23,8 +23,8 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   const [fontsLoaded] = useFonts({
-    "Jua": require("./assets/fonts/Jua-Regular.ttf"),
-    "Kolker": require("./assets/fonts/KolkerBrush-Regular.ttf"),
+    Jua: require("./assets/fonts/Jua-Regular.ttf"),
+    Kolker: require("./assets/fonts/KolkerBrush-Regular.ttf"),
   });
   const [selected, setSelected] = useState("");
   const image = require("./assets/images/header-img.png");
